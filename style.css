@@ -1,0 +1,86 @@
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-template-rows: repeat(8, 60px);
+  border: 2px solid #333;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.celda {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.blanco {
+  background-color: #eee;
+}
+
+.negro {
+  background-color: #888;
+}
+
+.seleccionada {
+  background-color: yellow !important;
+}
+
+#mensaje {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #e74c3c; /* Rojo fuerte */
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateX(100%);
+  z-index: 999;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#mensaje.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.boton-oculto {
+  display: none;
+}
+
+#reiniciar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+#reiniciar:hover {
+  background: darkgreen;
+}
